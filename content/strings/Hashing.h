@@ -52,3 +52,43 @@ vector<H> getHashes(string& str, int length) {
 }
 
 H hashString(string& s){H h{}; for(char c:s) h=h*C+c;return h;}
+
+// not part of kactl
+// example taken from practice
+H pow(H a, ull b) {
+    H output = 1;
+    while (b > 0) {
+        if (b & 1) {
+            output = output * a;
+        }
+        a = a * a;
+        b >>= 1;
+    }
+    return output;
+ 
+}
+
+void example() {
+
+	string s = "asdfakfhdlksahfsddfa";
+	int n = s.size();
+	
+	int window_length = 5;
+
+	// C is the prime, and we raise it to the power of the length of the string - 1
+	H highest = pow(C, window_length - 1);
+	string first = s.substr(0, window_length);
+	
+	// current hash in every iteration
+	H hash = hashString(first);
+
+	for (int i = window_length; i < n; i++) {
+
+		// subtract out the largest character
+		hash = hash - (highest * s[i - window_length]);
+
+		// add the next character
+		hash = hash * C + s[i];
+	}
+
+}
