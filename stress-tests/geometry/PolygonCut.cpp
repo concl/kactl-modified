@@ -17,7 +17,7 @@ int main() {
 			P a = ps[i], b = ps[(i+1)%N];
 			P c = ps[j], d = ps[(j+1)%N];
 			P r1, r2;
-			auto r = segInter(a, b, c, d);
+			auto r = seg_inter(a, b, c, d);
 			if (sz(r) == 2) goto fail;
 			if (sz(r) == 1) {
 				if (i+1 == j || (j+1) % N == i) ;
@@ -32,13 +32,13 @@ int main() {
 			double x = rand() / (RAND_MAX + 1.0) * 10 - 5;
 			double y = rand() / (RAND_MAX + 1.0) * 10 - 5;
 			if (!inPolygon(ps, P{x,y}, true)) continue;
-			if (sideOf(p, q, P{x,y}) > 0) continue;
+			if (side_of(p, q, P{x,y}) > 0) continue;
 			count++;
 		}
 		double approxArea = (double)count / ITS * 100;
 
-		ps = polygonCut(ps, p, q);
-		double realArea = ps.empty() ? 0.0 : abs(polygonArea2(ps) / 2.0);
+		ps = polygon_cut(ps, p, q);
+		double realArea = ps.empty() ? 0.0 : abs(polygon_area2(ps) / 2.0);
 
 		// cout << setprecision(2) << fixed;
 		assert(realArea - approxArea < 2e-1);

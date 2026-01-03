@@ -177,7 +177,7 @@ void testRandom(int n, int numPts = 10, int lim = 5, bool brute = false) {
 			pts.push_back(randPt(lim)); // rndEps(lim, 1e-10));
 		}
 		polygons.push_back(genPolygon(pts));
-		if (polygonArea2(polygons.back()) < 0) {
+		if (polygon_area2(polygons.back()) < 0) {
 			reverse(all(polygons.back()));
 		}
 	}

@@ -22,7 +22,7 @@
 #include "Point.h"
 
 typedef Point<double> P;
-vector<P> polygonCut(const vector<P>& poly, P s, P e) {
+vector<P> polygon_cut(const vector<P>& poly, P s, P e) {
 	vector<P> res;
 	rep(i,0,sz(poly)) {
 		P cur = poly[i], prev = i ? poly[i-1] : poly.back();

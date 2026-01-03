@@ -24,7 +24,7 @@ double polyUnion(vector<vector<P>>& poly) {
 		rep(j,0,sz(poly)) if (i != j) {
 			rep(u,0,sz(poly[j])) {
 				P C = poly[j][u], D = poly[j][(u + 1) % sz(poly[j])];
-				int sc = sideOf(A, B, C), sd = sideOf(A, B, D);
+				int sc = side_of(A, B, C), sd = side_of(A, B, D);
 				if (sc != sd) {
 					double sa = C.cross(D, A), sb = C.cross(D, B);
 					if (min(sc, sd) < 0)

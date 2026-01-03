@@ -11,7 +11,7 @@ int main() {
 			b(rand()%GRID, rand()%GRID),
 			c(rand()%GRID, rand()%GRID),
 			d(rand()%GRID, rand()%GRID);
-		auto pa = lineInter(a,b,c,d);
+		auto pa = line_inter(a,b,c,d);
 		if (pa.first == 1) {
 			assert(lineDist(a, b, pa.second) < 1e-8);
 			assert(lineDist(c, d, pa.second) < 1e-8);

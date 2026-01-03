@@ -127,7 +127,7 @@ int main1() {
 		}
 
 		vector<P> hull = convexHull(ps);
-		ll ar2 = polygonArea2(hull);
+		ll ar2 = polygon_area2(hull);
 		if (ar2 != sumar) fail();
 
 		continue; }

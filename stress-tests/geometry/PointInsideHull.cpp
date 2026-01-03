@@ -18,8 +18,8 @@ int main() {
 			int x = rand() % 22 - 11;
 			int y = rand() % 22 - 11;
 			P p{x,y};
-			assert(inPolygon(ps2, p, true) == (inHull(ps2, p, true)));
-			assert(inPolygon(ps2, p, false) == (inHull(ps2, p, false)));
+			assert(inPolygon(ps2, p, true) == (in_hull(ps2, p, true)));
+			assert(inPolygon(ps2, p, false) == (in_hull(ps2, p, false)));
 		}
 	}
 	cout<<"Tests passed!"<<endl;

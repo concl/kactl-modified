@@ -35,7 +35,7 @@ bool operator<(Angle a, Angle b) {
 
 // Given two points, this calculates the smallest angle between
 // them, i.e., the angle that covers the defined line segment.
-pair<Angle, Angle> segmentAngles(Angle a, Angle b) {
+pair<Angle, Angle> segment_angles(Angle a, Angle b) {
 	if (b < a) swap(a, b);
 	return (b < a.t180() ?
 	        make_pair(a, b) : make_pair(b, a.t360()));
@@ -45,7 +45,7 @@ Angle operator+(Angle a, Angle b) { // point a + vector b
 	if (a.t180() < r) r.t--;
 	return r.t180() < a ? r.t360() : r;
 }
-Angle angleDiff(Angle a, Angle b) { // angle b - angle a
+Angle angle_diff(Angle a, Angle b) { // angle b - angle a
 	int tu = b.t - a.t; a.t = b.t;
 	return {a.x*b.x + a.y*b.y, a.x*b.y - a.y*b.x, tu - (b < a)};
 }

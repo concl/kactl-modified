@@ -14,7 +14,7 @@
 
 typedef Point<double> P;
 #define arg(p, q) atan2(p.cross(q), p.dot(q))
-double circlePoly(P c, double r, vector<P> ps) {
+double circle_poly(P c, double r, vector<P> ps) {
 	auto tri = [&](P p, P q) {
 		auto r2 = r * r / 2;
 		P d = q - p;

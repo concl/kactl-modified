@@ -67,6 +67,6 @@ template<class P> vector<P> genPolygon(vector<P> pts, int depth=0) {
 	pa.erase(pa.begin());
 	pb.erase(pb.begin());
 	pa.insert(pa.end(), all(pb));
-	if (polygonArea2(pa) < 0) reverse(all(pa));
+	if (polygon_area2(pa) < 0) reverse(all(pa));
 	return pa;
 }

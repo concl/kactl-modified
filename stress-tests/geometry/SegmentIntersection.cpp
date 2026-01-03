@@ -41,7 +41,7 @@ int main() {
 		P a(rand()%GRID, rand()%GRID), b(rand()%GRID, rand()%GRID), c(rand()%GRID, rand()%GRID), d(rand()%GRID, rand()%GRID);
 		P tmp1, tmp2;
 		auto res = oldImpl::segmentIntersection(a,b,c,d, tmp1, tmp2);
-		auto res2 = segInter(a,b,c,d);
+		auto res2 = seg_inter(a,b,c,d);
 		if (res != sz(res2)) {
 			cout<<a<<' '<<b<<' '<<c<<' '<<d<<endl;
 			cout<<"old: "<<res<<" new: "<<sz(res2)<<endl;

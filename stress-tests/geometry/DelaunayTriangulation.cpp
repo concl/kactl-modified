@@ -65,7 +65,7 @@ int main() {
 		if (N >= 3) rep(i,0,N) if (!used[i]) fail();
 
 		vector<P> hull = convexHull(ps);
-		double ar2 = polygonArea2(hull);
+		double ar2 = polygon_area2(hull);
 		if (abs(sumar - ar2) > 1e-4) fail();
 
 		continue; }

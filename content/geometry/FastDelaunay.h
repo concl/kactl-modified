@@ -34,7 +34,7 @@ bool circ(P p, P a, P b, P c) { // is p in the circumcircle?
 	    B = b.dist2()-p2, C = c.dist2()-p2;
 	return p.cross(a,b)*C + p.cross(b,c)*A + p.cross(c,a)*B > 0;
 }
-Q makeEdge(P orig, P dest) {
+Q make_edge(P orig, P dest) {
 	Q r = H ? H : new Quad{new Quad{new Quad{new Quad{0}}}};
 	H = r->o; r->r()->r() = r;
 	rep(i,0,4) r = r->rot, r->p = arb, r->o = i & 1 ? r : r->r();
@@ -45,7 +45,7 @@ void splice(Q a, Q b) {
 	swap(a->o->rot->o, b->o->rot->o); swap(a->o, b->o);
 }
 Q connect(Q a, Q b) {
-	Q q = makeEdge(a->F(), b->p);
+	Q q = make_edge(a->F(), b->p);
 	splice(q, a->next());
 	splice(q->r(), b);
 	return q;
@@ -53,7 +53,7 @@ Q connect(Q a, Q b) {
 
 pair<Q,Q> rec(const vector<P>& s) {
 	if (sz(s) <= 3) {
-		Q a = makeEdge(s[0], s[1]), b = makeEdge(s[1], s.back());
+		Q a = make_edge(s[0], s[1]), b = make_edge(s[1], s.back());
 		if (sz(s) == 2) return { a, a->r() };
 		splice(a->r(), b);
 		auto side = s[0].cross(s[1], s[2]);
