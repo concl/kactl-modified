@@ -62,6 +62,7 @@ Dynamic programming
 	RMQ (sparse table a.k.a 2^k-jumps)
 	Bitonic cycle
 	Log partitioning (loop over most restricted)
+	Sum over subsets
 Combinatorics
 	Computation of binomial coefficients
 	Pigeon-hole principle
