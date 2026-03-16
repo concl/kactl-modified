@@ -5,40 +5,26 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 #define pb push_back
-
 typedef long long ll;
-typedef pair<int, int> pii;
+typedef pair<int,int> pii;
 typedef vector<int> vi;
 
-// print pairs
-template<typename A, typename B> ostream& operator<< (ostream &cout, pair<A,B> const &p) {
-    return cout << "(" << p.first << ", " << p.second << ")";
-}
+template<typename A, typename B> ostream& operator<<(ostream &os, const pair<A, B> &p)
+{ return os << '(' << p.first << ", " << p.second << ')'; }
+template<typename T> ostream& operator<<(ostream &os, const vector<T> &v)
+{ os << '{'; string sep; for (const auto &x: v) os << sep << x, sep = ", "; return os << '}';}
 
-// print vectors
-template<typename A> ostream& operator<< (ostream &cout, vector<A> const&v) {
-    cout << "["; rep (i, 0, v.size()){ if (i) cout << ", "; cout << v[i];} return cout << "]";
-}
+void dbg_out() { cerr << endl; }
+template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T)
+{ cerr << ' ' << H; dbg_out(T...); }
 
-// print maps
-template<typename K, typename V>
-ostream& operator<< (ostream &cout, unordered_map<K, V> const &m) {
-    cout << "{";
-    for (auto it = m.begin(); it != m.end(); ++it) {
-        if (it != m.begin()) cout << ", "; // can add a newline for clarity
-        cout << it->first << ": " << it->second; 
-    }
-    return cout << "}";
-}
-
-// easier print
-template<typename... Args>
-void print(Args&&... args) {
-    ((cout << args << " "), ...) << endl;
-}
-
+#ifdef TTL
+#define dbg(...) cerr << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
-	cin.exceptions(cin.failbit);
+    cin.tie(0)->sync_with_stdio(0);
+    // cout << setprecision(16) << std::fixed;
 }
