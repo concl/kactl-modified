@@ -39,3 +39,11 @@ template<class G, class F> void scc(G& g, F f) {
 	Time = ncomps = 0;
 	rep(i,0,n) if (comp[i] < 0) dfs(i, g, f);
 }
+
+int main() {
+    vector<vector<int>> g(n);
+    scc(g, [&](vi& component) {
+        // this runs once per SCC
+        for (int v : component) cout << v << " ";
+    });
+}
